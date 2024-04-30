@@ -1,0 +1,11 @@
+.my-width {
+    margin: 0 calc(50% - (50px * 3));
+}
+
+.my-square {
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    line-height: 100px;
+    text-align: center;
+}
