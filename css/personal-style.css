@@ -1,11 +1,25 @@
-.my-width {
-    margin: 0 calc(50% - (50px * 3));
+.my-width-hard {
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.my-width-medium {
+    width: 630px;
+    margin: 0 auto;
+    padding-top: 2rem;
+}
+
+.my-width-easy {
+    width: 490px;
+    margin: 0 auto;
+    padding-top: 2rem;
 }
 
 .my-square {
-    width: 100px;
-    height: 100px;
+    width: 70px;
+    height: 70px;
     border: 1px solid black;
-    line-height: 100px;
+    line-height: 70px;
     text-align: center;
 }
