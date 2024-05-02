@@ -1,19 +1,20 @@
 const container = document.getElementById('container-game');
 const btnStart = document.querySelector('#startGame');
-const widthContainer = document.querySelector('#container-game').classList;
+const widthContainer = document.querySelector('#container-game');
 
 
 //creo il bottone per iniziare il gioco
-btnStart.addEventListener('click', function (prevenzione) {
-    prevenzione.preventDefault()
+btnStart.addEventListener('click', function () {
+    
 
     let modeEasy = document.querySelector('#easy').checked;
     let modeMedium = document.querySelector('#medium').checked;
     let modeHard = document.querySelector('#hard').checked;
     console.log(modeEasy, modeMedium, modeHard);
 
+    widthContainer.innerHTML = '';
     if (modeEasy == true) {
-        widthContainer.add('my-width-easy');
+        widthContainer.classList.add('my-width-easy');
         //quanti quadrati mi servono?? uso il ciclo for per avere un numero fisso di quadrati.
         for (let i = 1; i <= 49; i++) {
             let square = createSquare('div', 'my-square');
@@ -28,7 +29,8 @@ btnStart.addEventListener('click', function (prevenzione) {
         }
 
     } else if (modeMedium == true) {
-        widthContainer.add('my-width-medium');
+        widthContainer.classList.remove('my-width-easy');
+        widthContainer.classList.add('my-width-medium');
 
         for (let i = 1; i <= 81; i++) {
             let square = createSquare('div', 'my-square');
@@ -39,7 +41,8 @@ btnStart.addEventListener('click', function (prevenzione) {
             container.append(square)
         }
     } else if (modeHard == true) {
-        widthContainer.add('my-width-hard');
+        widthContainer.classList.remove('my-width-medium');
+        widthContainer.classList.add('my-width-hard');
 
         for (let i = 1; i <= 100; i++) {
             let square = createSquare('div', 'my-square');
@@ -53,9 +56,7 @@ btnStart.addEventListener('click', function (prevenzione) {
     } else {
         alert('seleziona una difficoltà!');
     }
-}, { once: true })
-
-
+})
 
 
 
@@ -97,7 +98,7 @@ function clickSquare(ogg, classe, textSquare) {
 //     square.innerHTML = '';
 //  }
 
-
+/*
 //DOMANDA? DEVO METTERE TUTTE LE VARIABILI NEGLI ARGOMENTI? TEORICAMENTE SI
 function creazioneGriglia(nSquare) {
     for (let i = 1; i <= nSquare; i++) {
@@ -112,7 +113,7 @@ function creazioneGriglia(nSquare) {
         container.append(square)
     }
 }
-
+*/
 
 
 
